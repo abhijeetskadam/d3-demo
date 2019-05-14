@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@atlaskit/datetime-picker": "^8.0.1",
+    "@atlaskit/field-range": "^7.0.0",
     "@atlaskit/spinner": "^11.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
