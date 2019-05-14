@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import * as d3 from "d3";
 import "./styles.css";
 
@@ -72,5 +73,25 @@ function LineChart({ data, width, height, margin, gridLines }) {
     </svg>
   );
 }
+
+LineChart.defaultProps = {
+  width: 600,
+  height: 400,
+  margin: 10,
+  gridLines: false
+};
+
+LineChart.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      x: PropTypes.string,
+      y: PropTypes.number
+    })
+  ).isRequired,
+  width: PropTypes.number,
+  height: PropTypes.number,
+  margin: PropTypes.number,
+  gridLines: PropTypes.bool
+};
 
 export default LineChart;

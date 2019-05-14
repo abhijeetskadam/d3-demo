@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react";
+import PropTypes from "prop-types";
 import FieldRange from "@atlaskit/field-range";
 import { DateTimePicker } from "@atlaskit/datetime-picker";
 import "./styles.css";
@@ -69,5 +70,9 @@ function AddPoint({ onAddPoint }) {
     </div>
   );
 }
+
+AddPoint.propTypes = {
+  onAddPoint: PropTypes.func.isRequired
+};
 
 export default AddPoint;
