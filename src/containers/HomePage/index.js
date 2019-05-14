@@ -1,7 +1,8 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect, useCallback, Fragment } from "react";
 import "./styles.css";
 import LineChart from "../../components/LineChart";
 import ErrorOrLoader from "../../components/ErrorOrLoader";
+import AddPoint from "../../components/AddPoint";
 import request from "../../utils/request";
 
 function HomePage() {
@@ -12,7 +13,11 @@ function HomePage() {
     request("/data")
       .then(result => setData(result.values))
       .catch(() => setIsError(true));
-  }, []);
+  }, [setData]);
+
+  const onAddPoint = useCallback(point => setData(data => [...data, point]), [
+    setData
+  ]);
 
   return (
     <Fragment>
@@ -29,6 +34,7 @@ function HomePage() {
         ) : (
           <ErrorOrLoader isError={isError} />
         )}
+        <AddPoint onAddPoint={onAddPoint} />
       </div>
     </Fragment>
   );
