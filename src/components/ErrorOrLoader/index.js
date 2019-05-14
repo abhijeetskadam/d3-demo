@@ -4,7 +4,7 @@ import Spinner from "@atlaskit/spinner";
 
 function ErrorOrLoader({ isError }) {
   return (
-    <div className="app__placeholder">
+    <div className="app__placeholder center-block">
       {isError ? (
         <span className="app__placeholder--errortext">
           Oppsss, Something went wrong.!!

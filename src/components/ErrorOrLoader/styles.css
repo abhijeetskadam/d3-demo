@@ -1,9 +1,6 @@
 .app__placeholder {
-  display: flex;
   height: 500px;
   width: 800px;
-  align-items: center;
-  justify-content: center;
 }
 
 .app__placeholder--errortext {
