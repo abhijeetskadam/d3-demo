@@ -29,7 +29,7 @@ function AddPoint({ onAddPoint }) {
         setIsError(true);
         setIsSuccess(false);
       });
-  }, [rangeValue, dateTime]);
+  }, [rangeValue, dateTime, onAddPoint]);
 
   return (
     <div className="add-point">

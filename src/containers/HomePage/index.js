@@ -15,9 +15,10 @@ function HomePage() {
       .catch(() => setIsError(true));
   }, [setData]);
 
-  const onAddPoint = useCallback(point => setData(data => [...data, point]), [
-    setData
-  ]);
+  const onAddPoint = useCallback(
+    point => setData(data => [...data, point]),
+    []
+  );
 
   return (
     <Fragment>
